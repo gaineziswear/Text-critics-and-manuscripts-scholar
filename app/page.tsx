@@ -30,6 +30,15 @@ export default function Home() {
           <div className="actions" aria-label="Primary actions">
             <a className="primary" href="/app">Start research — free</a>
             <a className="secondary" href="/media">Open media studio</a>
+          <p className="eyebrow">Ancient text research platform</p>
+          <h1 id="home-title">Glossa</h1>
+          <h2>Go behind the translation.</h2>
+          <p>
+            Explore languages, words, manuscripts, textual variants, and traditions behind the ancient texts that shaped Christianity and the Abrahamic world.
+          </p>
+          <div className="actions" aria-label="Primary actions">
+            <a className="primary" href="/app">Start research — free</a>
+            <a className="secondary" href="/glossa">Explore Glossa</a>
           </div>
         </section>
         <aside className="hero-visual" aria-label="Manuscript research illustration">
@@ -75,6 +84,12 @@ export default function Home() {
           ))}
         </div>
         <a className="primary section-cta" href="/media">Open live and media connectors</a>
+          <p className="lede">Start with Supabase plus one AI provider. Add scholarly datasets, email, billing, and monitoring as the product features become active.</p>
+        </div>
+        <div className="api-list">
+          {apiNeeds.map((api) => <span className="pill" key={api}>{api}</span>)}
+          <a className="text-link" href="/api-requirements">View full API checklist in docs</a>
+        </div>
       </section>
 
       <section className="grid feature-grid" aria-label="Platform capabilities">
