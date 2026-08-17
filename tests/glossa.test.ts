@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { analyzeText, analyzeToken, candidatesForScript, detectScript, tokenize } from '../lib/glossa/engine';
 import { LANGUAGES } from '../lib/glossa/languages';
+import { analyzeText, analyzeToken, candidatesForScript, detectScript, tokenize } from '@/lib/glossa/engine';
+import { LANGUAGES } from '@/lib/glossa/languages';
 describe('Glossa core', () => {
   it('preserves the 53 language catalog', () => { expect(LANGUAGES).toHaveLength(53); });
   it('tokenizes unicode words independently', () => { expect(tokenize('בראשית ܡܠܬܐ λόγος')).toEqual(['בראשית','ܡܠܬܐ','λόγος']); });
