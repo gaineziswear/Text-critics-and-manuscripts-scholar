@@ -1,0 +1,3 @@
+import './globals.css';
+export const metadata={title:'Glossa — Go Behind the Translation',description:'AI-assisted ancient language and Christian research platform'};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><nav className="nav"><a className="brand" href="/">GLOSSA</a><a href="/glossa">Glossa</a><a href="/verum-academy">Verum Academy</a><a href="/verum-chat">Verum Chat</a><a href="/media">Media</a><a href="/via-verum">Via Verum</a><a href="/pricing">Pricing</a><a className="button" href="/app">Start Free</a></nav>{children}</body></html>}

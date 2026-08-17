@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server';
+export async function POST(req:Request){ const data=await req.json(); return NextResponse.json({status:'NEEDS QUALIFICATION', label:'AI-GENERATED HISTORICAL RECONSTRUCTION', export:{format:data.format ?? 'Article', body:'Provider not configured. Add a server-side provider key to generate content.'}, checks:['citation accuracy','historical accuracy','AI reconstruction labeling']}); }
