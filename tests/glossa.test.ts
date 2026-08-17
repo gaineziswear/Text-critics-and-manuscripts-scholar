@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest';
+import { analyzeText, analyzeToken, candidatesForScript, detectScript, tokenize } from '../lib/glossa/engine';
+import { LANGUAGES } from '../lib/glossa/languages';
 import { analyzeText, analyzeToken, candidatesForScript, detectScript, tokenize } from '@/lib/glossa/engine';
 import { LANGUAGES } from '@/lib/glossa/languages';
 describe('Glossa core', () => {
