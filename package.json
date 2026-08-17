@@ -11,10 +11,11 @@
     "start": "next start",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
+    "deployment:check": "node scripts/verify-deployment-env.mjs",
     "ci": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
-    "next": "15.4.6",
+    "next": "15.5.7",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "zod": "3.25.76"
@@ -26,23 +27,5 @@
     "jsdom": "26.1.0",
     "typescript": "5.9.2",
     "vitest": "3.2.4"
-  }
-}
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "zod": "latest"
-  },
-  "devDependencies": {
-    "@testing-library/react": "latest",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "typescript": "latest",
-    "vitest": "latest",
-    "jsdom": "latest"
   }
 }
