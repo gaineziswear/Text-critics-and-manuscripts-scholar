@@ -21,15 +21,6 @@ export default function Home() {
     <>
       <main className="hero">
         <section className="hero-copy" aria-labelledby="home-title">
-          <p className="eyebrow">Ancient text · public witness · serious research</p>
-          <h1 id="home-title">Glossa</h1>
-          <h2>Go behind the translation.</h2>
-          <p>
-            A scholarly web platform for ancient languages, manuscripts, Christian history, Messianic Jewish context, and responsible media rooted in evidence rather than spectacle.
-          </p>
-          <div className="actions" aria-label="Primary actions">
-            <a className="primary" href="/app">Start research — free</a>
-            <a className="secondary" href="/media">Open media studio</a>
           <p className="eyebrow">Ancient text research platform</p>
           <h1 id="home-title">Glossa</h1>
           <h2>Go behind the translation.</h2>
@@ -84,12 +75,6 @@ export default function Home() {
           ))}
         </div>
         <a className="primary section-cta" href="/media">Open live and media connectors</a>
-          <p className="lede">Start with Supabase plus one AI provider. Add scholarly datasets, email, billing, and monitoring as the product features become active.</p>
-        </div>
-        <div className="api-list">
-          {apiNeeds.map((api) => <span className="pill" key={api}>{api}</span>)}
-          <a className="text-link" href="/api-requirements">View full API checklist in docs</a>
-        </div>
       </section>
 
       <section className="grid feature-grid" aria-label="Platform capabilities">
