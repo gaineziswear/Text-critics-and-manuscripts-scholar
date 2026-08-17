@@ -1,0 +1,1 @@
+export default function Admin(){return <main className="section"><h1>Admin manuscripts</h1><p>Manage users, sources, manuscripts, languages, agents, providers, usage, feature flags, and audit-ready research records.</p></main>}
