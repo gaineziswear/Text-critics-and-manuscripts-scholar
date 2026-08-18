@@ -1,5 +1,10 @@
 import { providerStatus } from '@/lib/agents/orchestrator';
 
+// Provider status depends on server runtime environment variables and must not be
+// frozen into a statically generated page at build time.
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default function Page() {
   const providers = providerStatus();
 
