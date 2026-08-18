@@ -1,12 +1,41 @@
-import { providerStatus } from '@/lib/agents/orchestrator';
+'use client';
 
-// Provider status depends on server runtime environment variables and must not be
-// frozen into a statically generated page at build time.
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+import { useEffect, useState } from 'react';
+
+type ProviderResponse = {
+  environment: string;
+  deployment: string | null;
+  project: string | null;
+  providers: {
+    openai: boolean;
+    anthropic: boolean;
+    google: boolean;
+  };
+};
 
 export default function Page() {
-  const providers = providerStatus();
+  const [status, setStatus] = useState<ProviderResponse | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    fetch('/api/providers', { cache: 'no-store' })
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`Provider check failed (${response.status})`);
+        return response.json() as Promise<ProviderResponse>;
+      })
+      .then((data) => {
+        if (active) setStatus(data);
+      })
+      .catch((err: unknown) => {
+        if (active) setError(err instanceof Error ? err.message : 'Provider check failed');
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
     <main className="section">
@@ -19,12 +48,21 @@ export default function Page() {
         </div>
         <div className="card">
           <h3>Server providers</h3>
-          <p>Keys are checked on the server only. No secret is sent to the browser.</p>
-          <ul>
-            <li>OpenAI: {providers.openai ? 'Configured' : 'Not configured'}</li>
-            <li>Anthropic: {providers.anthropic ? 'Configured' : 'Not configured'}</li>
-            <li>Google: {providers.google ? 'Configured' : 'Not configured'}</li>
-          </ul>
+          <p>Keys are checked through a server-only diagnostic endpoint. No secret is sent to the browser.</p>
+          {error ? (
+            <p role="alert">{error}</p>
+          ) : status ? (
+            <>
+              <p><strong>Environment:</strong> {status.environment}</p>
+              <ul>
+                <li>OpenAI: {status.providers.openai ? 'Configured' : 'Not configured'}</li>
+                <li>Anthropic: {status.providers.anthropic ? 'Configured' : 'Not configured'}</li>
+                <li>Google: {status.providers.google ? 'Configured' : 'Not configured'}</li>
+              </ul>
+            </>
+          ) : (
+            <p>Checking server configuration…</p>
+          )}
         </div>
         <div className="card">
           <h3>Research pipeline</h3>
