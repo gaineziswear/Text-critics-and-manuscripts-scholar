@@ -1,5 +1,5 @@
 const OPENAI_RESPONSES_URL = 'https://api.openai.com/v1/responses';
-const DEFAULT_MODEL = process.env.OPENAI_MODEL || 'gpt-5.6';
+const DEFAULT_MODEL = process.env.OPENAI_MODEL || 'gpt-5.6-luna';
 
 export class ProviderNotConfiguredError extends Error {
   constructor() {
