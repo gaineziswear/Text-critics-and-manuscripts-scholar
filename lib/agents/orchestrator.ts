@@ -30,7 +30,7 @@ type ResearchInput = {
   text: string;
   excludedLanguages?: string[];
   task?: string;
-  context?: string;
+  context?: string;\n  corpus?: 'hadith' | 'quran';\n  forcedLanguage?: string;
 };
 
 export function providerStatus() {
@@ -90,7 +90,7 @@ Research rules:
 7. Distinguish primary evidence, secondary scholarship, and model inference. Mark uncertainty clearly.
 8. When a claim cannot be verified from the available evidence, say so rather than filling the gap.
 9. For Christian interpretation, represent Catholic, Orthodox, Protestant, patristic, and critical scholarly positions fairly where relevant; do not manufacture consensus.
-10. Return a concise but genuinely scholarly answer suitable for a research workspace.
+10. If a forced language is supplied, produce a clearly labeled constrained reading and explicitly state what independent evidence would be required to treat it as historical evidence.\n11. Return a concise but genuinely scholarly answer suitable for a research workspace.
 
 Return JSON with this shape:
 {
