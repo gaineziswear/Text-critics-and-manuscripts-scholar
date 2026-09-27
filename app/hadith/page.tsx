@@ -1,0 +1,2 @@
+import { ResearchWorkspace } from '@/components/ResearchWorkspace';
+export default function HadithLab(){return <><section className="lab-hero"><p className="eyebrow">Hadith textual criticism</p><h1>From transmitted wording to manuscript evidence.</h1><p>Preserve the supplied witness, analyze language and roots, inspect textual-critical hazards, and compare constrained readings without turning similarity into proof.</p></section><ResearchWorkspace corpus="hadith"/></>}
