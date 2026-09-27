@@ -1,3 +1,23 @@
 import './globals.css';
-export const metadata={title:'Glossa — Go Behind the Translation',description:'AI-assisted ancient language and Christian research platform'};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><nav className="nav"><a className="brand" href="/">GLOSSA</a><a href="/glossa">Glossa</a><a href="/verum-academy">Verum Academy</a><a href="/verum-chat">Verum Chat</a><a href="/media">Media</a><a href="/via-verum">Via Verum</a><a href="/pricing">Pricing</a><a className="button" href="/app">Start Free</a></nav>{children}</body></html>}
+
+export const metadata = {
+  title: 'Glossa — Textual Criticism & Ancient Language Research',
+  description: 'Evidence-first manuscript, linguistic, phonological and textual-critical research for Hadith, Qur\'an and ancient texts.',
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="en"><body>
+    <nav className="nav">
+      <a className="brand" href="/">GLOSSA</a>
+      <a href="/hadith">Hadith Lab</a>
+      <a href="/quran">Qur'an Lab</a>
+      <a href="/manuscripts">Manuscripts</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/auth">Sign in</a>
+      <a className="button" href="/app">Start Free</a>
+    </nav>
+    {children}
+    <footer className="footer"><span>GLOSSA · Evidence before assertion.</span><span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/faq">FAQ</a></span></footer>
+  </body></html>;
+}
