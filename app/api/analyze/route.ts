@@ -9,7 +9,7 @@ const schema = z.object({
   text: z.string().min(1).max(10000),
   excludedLanguages: z.array(z.string()).default([]),
   task: z.string().default('glossa-analysis'),
-  context: z.string().max(5000).optional(),
+  context: z.string().max(5000).optional(),\n  corpus: z.enum(['hadith','quran']).default('hadith'),\n  forcedLanguage: z.string().max(100).optional(),
 });
 
 export async function POST(req: Request) {
